@@ -1,9 +1,10 @@
-.is-style-icon-btn a::after {
+.is-style-icon-btn .wp-block-button__link::after {
     content: "\f054";
     font-family: "Font Awesome 5 Solid";
     display: none;
     line-height: 1;
 }
-.is-style-icon-btn a svg {
+
+.is-style-icon-btn .wp-block-button__link svg {
     margin-left: .5em;
 }
