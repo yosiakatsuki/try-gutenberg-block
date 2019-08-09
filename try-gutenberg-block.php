@@ -3,6 +3,9 @@
 Plugin Name: try-gutenberg-block
 */
 
+/**
+ * 編集画面のみで読み込まれるやつ
+ */
 function try_gutenberg_block_enqueue() {
 	wp_enqueue_script(
 		'try-gutenberg-block-script',
@@ -12,7 +15,9 @@ function try_gutenberg_block_enqueue() {
 }
 add_action( 'enqueue_block_editor_assets', 'try_gutenberg_block_enqueue' );
 
-
+/**
+ * 編集画面とフロントの両方で読み込まれるやつ
+ */
 function try_gutenberg_block_assets() {
 	wp_enqueue_style(
 		'myguten-style',
@@ -20,5 +25,4 @@ function try_gutenberg_block_assets() {
 	);
 }
 add_action( 'enqueue_block_assets', 'try_gutenberg_block_assets' );
-add_action( 'wp_enqueue_scripts', 'try_gutenberg_block_assets' );
 
