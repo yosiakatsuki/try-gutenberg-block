@@ -18,6 +18,7 @@ function try_gutenberg_block_enqueue() {
 		array( 'wp-blocks' )
 	);
 }
+
 add_action( 'enqueue_block_editor_assets', 'try_gutenberg_block_enqueue' );
 
 /**
@@ -29,5 +30,26 @@ function try_gutenberg_block_assets() {
 		plugins_url( 'css/try-gutenberg-block-css.css', __FILE__ )
 	);
 }
+
 add_action( 'enqueue_block_assets', 'try_gutenberg_block_assets' );
 
+/**
+ * ブロックの登録
+ */
+function try_gutenberg_register_block() {
+	wp_register_script(
+		'try-gutenberg-block-build-script',
+		plugins_url( 'build/index.js', __FILE__ ),
+		array( 'wp-blocks', 'wp-element' )
+	);
+
+	register_block_type(
+		'try-gutenberg/ex-01',
+		array(
+			'editor_script' => 'try-gutenberg-block-build-script',
+		)
+	);
+
+}
+
+add_action( 'init', 'try_gutenberg_register_block' );

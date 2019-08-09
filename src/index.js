@@ -7,3 +7,6 @@ registerBlockType('myguten/test-block', {
     edit: () => <div>テストぶろっくだよ!edit</div>,
     save: () => <div>テストぶろっくだよ!save</div>,
 });
+
+
+import "./block/ex01";
