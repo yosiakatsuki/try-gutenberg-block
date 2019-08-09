@@ -12,6 +12,11 @@ function try_gutenberg_block_enqueue() {
 		plugins_url( 'js/block/try-gutenberg-block-main.js', __FILE__ ),
 		array( 'wp-blocks' )
 	);
+	wp_enqueue_script(
+		'try-gutenberg-block-build-script',
+		plugins_url( 'build/index.js', __FILE__ ),
+		array( 'wp-blocks' )
+	);
 }
 add_action( 'enqueue_block_editor_assets', 'try_gutenberg_block_enqueue' );
 
