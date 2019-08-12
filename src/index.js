@@ -10,3 +10,4 @@ registerBlockType('myguten/test-block', {
 
 
 import "./block/ex01";
+import "./block/ex02";
